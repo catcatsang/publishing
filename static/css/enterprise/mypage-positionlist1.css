@@ -1203,8 +1203,8 @@ button {
 }
 
 .pending {
-    color: var(--greentemp);
-    background-color: rgb(230, 252, 240);
+    color: rgb(121,192,242);
+    background-color: rgb(236, 247, 255);
 }
 
 .drafting {
@@ -1213,11 +1213,11 @@ button {
 }
 
 .closed {
-    color: var(--greentemp);
-    background-color: rgb(230, 252, 240);
+    color: rgb(172,172,172);
+    background-color: rgb(242,242,242);
 }
 
 .editing{
     color: rgb(239,194,113);
-    background-color: rgb(230, 252, 240);
+    background-color: rgb(255, 248, 227);
 }
