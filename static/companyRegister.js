@@ -120,6 +120,7 @@ const fileChange = document.querySelector("#change_confirm_document_file");
 const filefail = document.querySelector("#file-fail");
 const closeBtn = document.querySelector("#btn_reset_certification");
 
+
 btnFile.style.display = "block";
 hiddenInputPage.style.display = "none";
 // 파일 첨부 , 사업자 등록번호 입력해야 넘어감
@@ -154,7 +155,7 @@ input.addEventListener("change", (e) => {
     //  파일통과,
     // console.log(path);
     // console.log([file]);
-    if (path.includes("jpg", "png")) {
+    if (path.includes("png")) {
       alert("Check");
       // console.log([file][0].name);
       filenames.forEach((filename) => {
@@ -171,11 +172,14 @@ input.addEventListener("change", (e) => {
 
       // fileAgree.style.display = "block"
     } else {
-      // alert("pdf jpg png 만 가능합니다.");
-      corp_wrap.style.display = "none";
+      alert("PNG파일만 가능합니다.");
+    }
+    closeBtn.addEventListener("click", () => {
+      corp_wrap.style.display = "block";
+      closeBtn.style.display = "none";
       input.value = "";
       console.log("out");
-    }
+    });
   });
 =======
 // 사업자등록번호 확인안돼면
@@ -247,6 +251,7 @@ checkboxes.forEach((checkbox) => {
 // 판독 이후, 아이디 이벤트들
 const idMsg = document.querySelector("#id");
 const idbox = document.querySelector(".idbox");
+
 const idcheckmsgbx = document.querySelector("#idCheckMsg1");
 const idcheckmsg = document.querySelector("#idFocusMsg");
 
@@ -304,13 +309,61 @@ const hiddenEmail = document.querySelector("#phoneTOemail");
 const hemailMSG = document.querySelector("#sms_msg_email1");
 const hemailInput = document.querySelector("#sms_email_id");
 const hiddenEmailbox = document.querySelector("#hidden-emaill-wrap");
+const phonetit = document.querySelector("#phonetit");
+const phonebuttonStrat = document.querySelector("#identify_phone_start");
+const phonebutton = document.querySelector("#identify_phone");
+const authentication = document.querySelector("#authentication_box");
+const phonenumInput = document.querySelector("#authentication");
+const phonealert = document.querySelector("#msg_identify_phone");
+let modalCheck;
 
-phoneBtn.addEventListener("click", () => {
-  hiddenEmail.style.display = "block";
+const showWarnModal = (modalMessage) => {
+  modalCheck = false;
+  document.getElementById("content-wrap").innerHTML = modalMessage;
+  document.querySelector("div.warn-modal").style.animation = "popUp 0.5s";
+  document.querySelector("div.modal").style.display = "flex";
+  setTimeout(() => {
+    modalCheck = true;
+  }, 500);
+};
+
+document.querySelector("div.modal").addEventListener("click", (e) => {
+  if (modalCheck) {
+    document.querySelector("div.warn-modal").style.animation = "popDown 0.5s";
+    setTimeout(() => {
+      document.querySelector("div.modal").style.display = "none";
+    }, 450);
+  }
 });
+
+authentication.style.display = "none";
+phonebutton.style.display = "none";
+phonebuttonStrat.style.display = "block";
+
+// 핸드폰 인증하기 누르면 밑에 태그나옴
+// 인증번호 모달창
+phonebuttonStrat.addEventListener("click", () => {
+  if (phonebuttonStrat.style.display === "block") {
+    console.log("처음 이프문");
+    authentication.style.display = "block";
+    phonebutton.style.display = "block";
+    phonebuttonStrat.style.display = "none";
+    phonetit.style.display = "none";
+  }
+});
+phonebutton.addEventListener("click", () => {
+  if (phonenumInput.value.length < 4) {
+    showWarnModal("인증번호는 4자리입니다.");
+    phonealert.style.display = "block";
+  } else {
+    phonealert.style.display = "none";
+  }
+});
+
 hemailInput.addEventListener("focus", () => {
   //
 });
+
 // 이메일에 @ 없으면 오류가뜸
 hemailInput.addEventListener("blur", () => {
   if (!hemailInput.value.includes("@")) {
@@ -322,3 +375,63 @@ hemailInput.addEventListener("blur", () => {
     hiddenEmailbox.style.borderColor = "gray";
   }
 });
+
+const address_main = document.querySelector("#address_main");
+const address_sub = document.querySelector("#address_sebu");
+
+address_main.addEventListener("click", () => {
+  new daum.Postcode({
+    oncomplete: function (data) {
+      var addr = ""; // 주소 변수
+      var extraAddr = ""; // 참고항목 변수
+
+      if (data.userSelectedType === "R") {
+        addr = data.roadAddress;
+      } else {
+        addr = data.jibunAddress;
+      }
+
+      if (data.userSelectedType === "R") {
+        if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+          extraAddr += data.bname;
+        }
+
+        if (data.buildingName !== "" && data.apartment === "Y") {
+          extraAddr +=
+            extraAddr !== "" ? ", " + data.buildingName : data.buildingName;
+        }
+
+        if (extraAddr !== "") {
+          extraAddr = " (" + extraAddr + ")";
+        }
+      } else {
+        document.querySelector("#address_sebu").value = "";
+      }
+
+      document.querySelector("#address_main").value = addr;
+    },
+  }).open();
+});
+
+// 회원가입 버튼 눌럿을때 이벤트
+const register = document.querySelector("#btn_submit");
+const buttons = document.querySelectorAll(".itembtn");
+
+register.addEventListener("click", () => {
+  if (integratedNUM.value.length === 0) {
+    integratedNUM.focus();
+    alert("사업자 등록번호를 입력해주세요.");
+    return;
+  }
+
+  let allChecked = true;
+  buttons.forEach((button) => {
+    if (button.checked === false) {
+      allChecked = false;
+    }
+  });
+  if (!allChecked) {
+    alert("약관에 동의해주세요.");
+  }
+});
+
