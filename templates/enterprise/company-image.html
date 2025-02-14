@@ -10,6 +10,17 @@
         href="https://cdn.jumpit.co.kr/jumpit/favicon.png">
     <link rel="stylesheet"
         href="/static/css/enterprise/mypage-headerfooter.css">
+    <link rel="stylesheet"
+        href="/static/css/enterprise/company-image.css">
+        <style>
+            @font-face {
+                font-family: Jumpit;
+                src: url("/static/fonts/member/ff840cfebfb63b0c-s.p.woff2");
+            }
+            *{
+                font-family: Jumpit;
+            }
+        </style>
 </head>
 
 <body>
@@ -275,8 +286,37 @@
                 </header>
             </div>
         </div>
-        <div>
-            <!-- 채울 내용은 이 태그 안에 작성. -->
+        <div class="container">
+            <div class="title">우리 회사를 보여줄 수 있는 사진을 등록해주세요</div>
+
+            <div class ="upload-container"><span>기업 로고</span>
+                <div class="upload-box"><button><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20" height="20" fill="none"
+                            viewBox="0 0 20 20">
+                            <path fill="#00DD6D" fill-rule="evenodd"
+                                d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10ZM9 9V5.5h2V9h3.5v2H11v3.5H9V11H5.5V9H9Z"
+                                clip-rule="evenodd"></path>
+                        </svg></button><span>사이즈: 148x148 px 이상<br>파일용량:
+                            10MB 이하</span></div>
+            </div>
+            <div class ="upload-container"><span>대표 이미지 (최소 1개 이상)</span>
+                <div class="upload-box"><button><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20" height="20" fill="none"
+                            viewBox="0 0 20 20">
+                            <path fill="#00DD6D" fill-rule="evenodd"
+                                d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10ZM9 9V5.5h2V9h3.5v2H11v3.5H9V11H5.5V9H9Z"
+                                clip-rule="evenodd"></path>
+                        </svg></button>
+                        <span>사이즈: 1080x720 px 이상<br>파일용량:
+                            10MB 이하</span></div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-secondary">기업정보 등록</button>
+                <button class="btn btn-primary">승인요청</button>
+            </div>
         </div>
         <footer class="footer">
             <div class="inner"><img alt="점핏 로고" class="logo"
