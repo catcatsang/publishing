@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>기업 회원가입</title>
     <link rel="stylesheet" href="../static/companyRegister.css" />
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   </head>
   <body class="join_body">
     <header id="sri_header" class="integrated_header">
@@ -132,7 +133,7 @@
                   id="corp_code"
                   type="text"
                   class="Typo SizeL defalt"
-                  maxlength="20"
+                  maxlength="13"
                   autocapitalize="off"
                   autocomplete="off"
                   placeholder="사업자 등록번호 직접 입력 (10자리)"
@@ -268,7 +269,7 @@
                 id="request_certification_complete"
                 style="display: none"
               >
-                <p class="file_upload_name">icon1.png</p>
+                <p class="file_upload_name"></p>
                 <div class="box_notice">
                   <p class="txt_notice txt_blue">검토완료 되었습니다.</p>
                 </div>
@@ -541,7 +542,7 @@
                     onmousedown="pushDataLayer('ga_lead', 'company_join', 'ceo_nm_input', 'click_ceo_nm')"
                     autocapitalize="off"
                     autocomplete="off"
-                    placeholder="예시) 김라민 외 1명 (사업자등록증명원 대표자명)"
+                    placeholder="예시) 김탬프 외 1명 (사업자등록증명원 대표자명)"
                   />
                 </div>
                 <em class="msgInvalid" id="msg_ceo_nm" style="display: none"
@@ -598,27 +599,37 @@
                     type="text"
                     class="Typo SizeL defalt"
                     maxlength="8"
-                    onmousedown="pushDataLayer('ga_lead', 'company_join', 'establish_year_input', 'click_establish_year');"
+                    
                     autocapitalize="off"
                     autocomplete="off"
                     placeholder="개업일 입력 (YYYYMMDD)"
                   />
                 </div>
-                <em class="msgInvalid" id="msg_open_date" style="display: none"
+                <em class="msgInvalid" id="msg_open_date" style="display: block"
                   >올바른 날짜입력 형식이 아닙니다.</em
                 >
               </div>
+              <!-- 개업일 -->
+               
               <!-- 기업구분 -->
+               <!-- 인증번호 적는 div -->
+               <div class="item" id="authentication_box">
+                  <label for="userId" class=""><strong>인증 번호</strong></label>
+                  <div class="TypoBox idbox " >
+                    <input name="authentication number" id="authentication" type="text" class="Typo SizeL defalt" maxlength="4" autocapitalize="off" autocomplete="off" placeholder="인증번호 4자리 입력">
+                  </div>
+                </div>
               <!-- 담당자 본인 인증 -->
               <div
                 class="cont_division identify_company"
                 id="company_identify_area"
               >
-                <strong class="cont_tit">담당자 본인 인증</strong>
+                <strong id="phonetit" class="cont_tit">담당자 본인 인증</strong>
+                <button type="button" class="BtnType SizeL btn_identify_phone" id="identify_phone">확인</button>
                 <button
                   type="button"
                   class="BtnType SizeL btn_identify_phone"
-                  id="identify_phone"
+                  id="identify_phone_start"
                 >
                   휴대폰 본인 인증
                 </button>
@@ -669,7 +680,7 @@
                 <div
                   class="item identify_phone email_column"
                   id="phoneTOemail"
-                  style="display: none"
+                  style="display: block"
                 >
                   <label for="email" class=""><strong>이메일</strong></label>
                   <div class="TypoBox" id="hidden-emaill-wrap">
@@ -997,8 +1008,9 @@
         </fieldset>
       </form>
     </div>
-    <!-- 사업자 등록증 없음 모달창 -->
+    <!-- 사업자 등록증 없음 모달창 배경 -->
     <div id="dimmed" class="sri_dimmed" style="display: none"></div>
+    <!-- 사업자 등록증 없음 모달창 -->
     <div
       class="ModalBox modal_notice_message_law show"
       id="notice_message_law"
@@ -1071,6 +1083,13 @@
         <span class="blind">닫기</span>
       </button>
     </div>
+    <!-- 모달창입니다. -->
+    <div class="modal">
+            <div class="warn-modal">
+                <div id="content-wrap"></div>
+            </div>
+        </div>
+    
   </body>
   <script src="../static/companyRegister.js"></script>
   <script src="../static/companyRegfocus.js"></script>
