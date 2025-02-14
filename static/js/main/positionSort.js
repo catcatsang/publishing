@@ -127,8 +127,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // 개별 버튼을 5개 이상 누르면 alert 메세지 띄우기
             // buttonCount 제한만 쓰니까 alert 메세지가 뜨고 버튼 해제도 안 되어서 안 눌려있다는 조건을 추가함
+
+            // ※ alert 띄우지 말고 선택만 더 안 되게 막으라고 하셔서 alert는 빼야겠음
             if (!isPressed && buttonCount >= 5) {
-                alert("직무는 5개까지 선택 가능합니다");
+                // alert("직무는 5개까지 선택 가능합니다");
                 // 메세지는 제대로 뜨는데 alert가 뜨고도 버튼 체크되는게 마음에 안 듬.
                 // 여기를 통과해야 aria-pressed의 상태를 바꾸는게 좋아보임.
                 return;
