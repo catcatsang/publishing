@@ -1367,7 +1367,7 @@
                                         <label>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path fill="#00DD6D" fill-rule="evenodd" d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10ZM9 9V5.5h2V9h3.5v2H11v3.5H9V11H5.5V9H9Z" clip-rule="evenodd"></path></svg>
                                             첨부파일 추가
-                                            <input hidden type="file">
+                                            <input hidden type="file" id="fileInput">
                                         </label>
                                     </div>
                                     <!-- 첨부한 파일이 없을 때 -->
@@ -1382,7 +1382,8 @@
                                     <!-- // 첨부한 파일이 없을 때 -->
                                     <!-- 첨부한 파일이 있을 때 -->
                                     <ul class="attachFileOn">
-                                        <li class="attachFileContent">
+                                        <!-- 동적으로 생성된 li 요소가 여기에 추가됩니다. -->
+                                        <!-- <li class="attachFileContent">
                                             <div>
                                                 <input type="checkbox" name="files_311765" value="311765">
                                                 <div class="fileInfo">
@@ -1419,7 +1420,7 @@
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#C4C4C4" fill-rule="evenodd" d="M4.667 2h6.666v2.667H14V6h-1.333v8H3.333V6H2V4.667h2.667V2ZM6 4.667h4V3.333H6v1.334ZM4.667 6v6.667h6.666V6H4.667ZM6 10.667V8h1.333v2.667H6ZM8.667 8v2.667H10V8H8.667Z" clip-rule="evenodd"></path></svg>
                                                 </button>
                                             </div>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                     <p>･ PDF 첨부를 추천드려요! 점핏은 인사담당자가 PDF로 보기 편하게 만들었어요 :&#41</p>
                                     <!-- // 첨부한 파일이 있을 때 -->
