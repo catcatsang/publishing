@@ -1,3 +1,4 @@
+
 :root {
     --black: #000;
     --white: #fff;
@@ -171,97 +172,106 @@
     /* 대전 */
     --subwayLine801: #34a344;
 }
+@font-face {
+    font-family: Jumpit;
+    src: url("/static/fonts/member/ff840cfebfb63b0c-s.p.woff2");
+}
+*{
+    font-family: Jumpit;
+}
 body {
-
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 20px;
+}
+#main-body{
+    display: flex;
 }
 .container {
-    max-width: 1200px;
-    margin: auto;
-    background: white;
+    width: 1200px;
+    height : 1080px;
+    margin-left: 50px;
+    margin-right: 100px;
+    background: #fff;
     padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 60px;
 }
-
-.container>div {
+.top-banner{
+    display: flex;
+    width: 1200px;
+    margin-left: 50px;
+    margin-right: 100px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
 }
 
-.container > span{
-    line-height: 1.5;
-}
-
-.subtitle-container{
-    margin-bottom: 20px;
-}
-.subtitle{
-    margin-bottom: 10px;
-    list-style: none; 
-    color : rgb(147,147,147)
-}
-
-
-.subtitle::before{
-    content : "●";  
-    font-size: 8px;
-    position: relative;
-    margin-right: 5px;
-}
-
-.title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.upload-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap : 10px
-}
-.upload-box {
-    width: 250px;
-    height: 250px;
-    border: 2px dashed #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.top-banner > div {
+    width : 120px;
+    height: 30px;
+    margin-top: 10px;
+    font-size : 16px;
+    font-weight: 700;
     text-align: center;
-    color: #999;
-    font-size: 14px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    flex-direction: column;
-    gap : 10px
 }
-.upload-box:hover {
-    border-color: #888;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+}
+.passed{
+    color : var(--greentemp)
+}
+.status {
+    color: var(--yellow100);
+    font-weight: bold;
+}
+.rejected {
+    color: red;
 }
 
-.buttons {
+.pagination {
+    text-align: center;
     display: flex;
-    justify-content: space-between;
-    padding : 0 32%
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    bottom: 10px; /* container의 밑에서 10px 위 */
+    width: 1200px;
+    background: #fff;
+    padding: 20px;
+    margin-right : 100px;
+    margin-left: 50px;  
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
-.btn {
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    padding: 5px 10px;
     border-radius: 5px;
+    color: #666666d7;
 }
-.btn-primary {
-    background-color:#6c757d ;
-    width: 200px;
-    color: white;
+.pagination a.active {
+    font-weight: bold;
+    text-decoration: underline;
+    
 }
-.btn-secondary {
-    background-color: var(--greentemp);
-    width: 200px;
-    color: white;
+.pagination a.disabled {
+    pointer-events: none;
 }
+
 
 .footer{
-    margin-top: 100px;
+    margin-top : 100px
 }

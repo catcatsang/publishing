@@ -86,8 +86,6 @@
 
 }
 
-
-
 .card-bottom {
     display: flex;
     align-items: center;
@@ -98,9 +96,7 @@
     width: 100%;
 }
 
-.card-bottom div {
-    margin-right: auto;
-}
+
 
 .card-bottom svg {
     margin-left: auto;
