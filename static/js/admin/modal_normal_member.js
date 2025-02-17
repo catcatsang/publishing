@@ -1,27 +1,19 @@
-// 일반회원 상세정보 모달
-// 회원정보 상세보기 모달 제어, 카테고리별 콘텐츠 표시, 활동내역 관리
-// 모달, 상세정보(6개 카테고리), 활동내역(2개 카테고리)
-
 document.addEventListener("DOMContentLoaded", function () {
     // 모달 열기: display 처리 및 배경 스크롤 방지
     function openModal(modal) {
-        // if (!modal) return;
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
         console.log("일반회원 모달 열기");
     }
-  }
 
     // 모달 닫기: display 처리 및 배경 스크롤 복구
     function closeModal(modal) {
-        // if (!modal) return;
         modal.style.display = "none";
         document.body.style.overflow = "";
         console.log("일반회원 모달 닫기");
     }
 
     // DOM 요소 선택
-    // 기본 모달 요소
     const memberModal = document.querySelector(".normal-member-modal");
     const memberDetailBtns = document.querySelectorAll(
         ".normal-member-table .detail-btn"
@@ -36,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ".normal-member-modal .save-btn"
     );
 
-    // 카테고리 및 콘텐츠 요소
     const detailSelect = document.querySelector(
         ".normal-member-modal .detail-select"
     );
@@ -50,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ".normal-member-modal .activity-content"
     );
 
-    // 필수 DOM 요소 검증
     if (!memberModal) {
         console.error("일반회원 모달을 찾을 수 없습니다.");
         return;
@@ -73,9 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     section.style.display = "none";
                 });
             }
-          }
-        });
-      }
 
             // 활동내역 영역 초기화
             if (activityContent) {
@@ -85,16 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     section.style.display = "none";
                 });
             }
-          }
-        });
-      }
-
-      // 모달 외부 클릭시 닫기
-      memberModal.addEventListener("click", (e) => {
-        if (e.target.classList.contains("modal-backdrop")) {
-          closeModal(memberModal);
+        } catch (error) {
+            console.error("모달 초기화 중 오류 발생:", error);
         }
-      });
+    }
 
     // 이벤트 리스너 설정
     function initializeEventListeners() {
@@ -119,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             }
 
-            // 저장 버튼 처리 (실제 저장 로직은 추후 구현)
+            // 저장 버튼 처리
             if (memberSaveBtn) {
                 memberSaveBtn.addEventListener("click", () => {
                     console.log("회원정보 저장");
@@ -127,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // 상세정보 카테고리 선택 처리 (프로필~자기소개)
+            // 상세정보 카테고리 선택 처리
             if (detailSelect && detailContent) {
                 detailSelect.addEventListener("change", function () {
                     const sections =
@@ -148,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // 활동내역 카테고리 선택 처리 (지원이력/신고내역)
+            // 활동내역 카테고리 선택 처리
             if (activitySelect && activityContent) {
                 activitySelect.addEventListener("change", function () {
                     const sections =
@@ -190,14 +171,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             console.error("이벤트 리스너 설정 중 오류 발생:", error);
         }
-      });
-
-      console.log("일반회원 모달 이벤트 리스너 초기화 완료");
-    } catch (error) {
-      console.error("이벤트 리스너 설정 중 오류 발생:", error);
     }
-  }
 
-  // 초기화 실행
-  initializeEventListeners();
+    // 초기화 실행
+    initializeEventListeners();
 });
