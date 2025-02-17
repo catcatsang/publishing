@@ -51,6 +51,7 @@ const searchResult = document.querySelector("#hiddenContents");
 const searchInput = document.querySelector(".searchInput");
 
 searchInput.addEventListener("input", () => {
+    // 공백을 제외한 문자만 추출하는 trim
     if (searchInput.value.trim() !== "") {
         console.log("인앤아웃");
         searchResult.style.display = "flex"; // 섹션 보이기
