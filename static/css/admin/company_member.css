@@ -86,8 +86,10 @@
 
 /* 사업자등록번호 셀 스타일 */
 .company-member-table td:nth-child(3) {
-    font-family: monospace; /* 고정폭 폰트로 숫자 정렬 개선 */
-    letter-spacing: 0.5px; /* 숫자 간격 조정 */
+    /* font-family: monospace; /* 고정폭 폰트로 숫자 정렬 개선 */
+    /* letter-spacing: 0.5px; 숫자 간격 조정 */ 
+    letter-spacing: -0.3px;
+    font-variant-numeric: tabular-nums;
 }
 
 /* 회원 상태 표시 스타일 */
