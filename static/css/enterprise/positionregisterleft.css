@@ -1,5 +1,5 @@
 .sidebar.left {
-    width: 350px;
+    width: 300px;
     font-size: 16px;
     color: black;
     font-weight: 400;
@@ -109,7 +109,6 @@
     font-size: 20px;
     margin-right: 2%;
     position: relative;
-    top: -5px;
 }
 .content > h2 {
     margin-bottom: 10px;
@@ -120,7 +119,7 @@
 .applybar {
     /* position: fixed; */
     bottom: 503;
-    width: 350px;
+    width: 300px;
     background: rgb(0, 221, 109);
     border: 1px solid rgb(0, 221, 109);
     text-align: center;
@@ -136,7 +135,7 @@
     margin-left: 5px;
 }
 .applybar p {
-    margin-left: 90px;
+    margin-left: 65px;
 }
 .headbar .other-container .vertical-line {
     margin-top: 12px;
