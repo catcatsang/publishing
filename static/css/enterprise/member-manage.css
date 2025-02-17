@@ -249,7 +249,7 @@ h2 {
 }
 
 .btn-role {
-    background-color: #4CAF50;
+    background-color: var(--greentemp);
     color: white;
 }
 
@@ -282,6 +282,21 @@ h2 {
     height: 400px
 }
 
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#name-display, #phone-display{
+    width : 100%;
+    font-size : 15px;
+    font-weight: 600;
+}
+.hidden {
+    display: none !important;
+}
+
 .footer {
     margin-top: 100px;
 }
@@ -303,6 +318,7 @@ h2 {
 
 .modal.active {
     display: block;
+    height: fit-content;
 }
 
 .modal-header {
@@ -331,6 +347,7 @@ h2 {
     width: 400px;
     margin-right: 50px;
     border-radius: 5px;
+    padding-left: 5px;
 }
 
 .modal-input>button {
@@ -338,8 +355,11 @@ h2 {
     height: 40px;
     border-radius: 5px;
 }
-
-.added-email>span {
+.added-email{
+    width : 400px;
+}
+.added-email > span {
+    display: inline-block;
     background: rgb(234, 234, 234);
     padding: 10px;
     border-radius: 5px;

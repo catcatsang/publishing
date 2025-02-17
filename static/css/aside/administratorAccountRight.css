@@ -55,7 +55,9 @@ body {
     color: white;
 }
 .sidebar .btnsave,
-.sidebar .btnmodi {
+.sidebar .btnmodi,
+.sidebar .nameedit,
+.sidebar .phoneedit {
     height: 35px;
     margin-left: 5px;
     width: 30%;

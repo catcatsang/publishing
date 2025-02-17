@@ -8,7 +8,7 @@ const passContent = document.querySelector(".final-passed")
 const failContent = document.querySelector(".failed")
 
 
-newBanner.addEventListener("click",() =>{
+newBanner.addEventListener("click", () => {
     newContent.classList.remove("hidden")
     newBanner.classList.add("selected")
     paperContent.classList.add("hidden")
@@ -19,7 +19,7 @@ newBanner.addEventListener("click",() =>{
     failBanner.classList.remove("selected")
 })
 
-paperBanner.addEventListener("click",() =>{
+paperBanner.addEventListener("click", () => {
     newContent.classList.add("hidden")
     newBanner.classList.remove("selected")
     paperContent.classList.remove("hidden")
@@ -30,7 +30,7 @@ paperBanner.addEventListener("click",() =>{
     failBanner.classList.remove("selected")
 })
 
-passBanner.addEventListener("click",() =>{
+passBanner.addEventListener("click", () => {
     newContent.classList.add("hidden")
     newBanner.classList.remove("selected")
     paperContent.classList.add("hidden")
@@ -41,7 +41,7 @@ passBanner.addEventListener("click",() =>{
     failBanner.classList.remove("selected")
 })
 
-failBanner.addEventListener("click",() =>{
+failBanner.addEventListener("click", () => {
     newContent.classList.add("hidden")
     newBanner.classList.remove("selected")
     paperContent.classList.add("hidden")
@@ -56,8 +56,23 @@ failBanner.addEventListener("click",() =>{
 
 const deleteApplicant = document.querySelectorAll("span.delete")
 
-deleteApplicant.forEach((button) =>{
-    button.addEventListener("click", (e)=>{
+deleteApplicant.forEach((button) => {
+    button.addEventListener("click", (e) => {
         e.target.closest("tr").remove();
     })
+})
+
+
+const checkBox = document.querySelectorAll("table > input")
+
+window.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("div.docu-pass")) {
+        checkBox.forEach((buttons) => {
+            if (buttons.checked) {
+                console.log(buttons.parentElement.lastElementChild.innerHTML)
+                buttons.parentElement.lastElementChild.innerHTML = "서류통과"
+            }
+
+        })
+    }
 })
