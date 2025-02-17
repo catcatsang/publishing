@@ -205,6 +205,7 @@ input.addEventListener("change", (e) => {
     reader.readAsDataURL(file);
     reader.addEventListener("load", (e) => {
         const path = e.target.result;
+        console.log(path)
         if (path.includes("image")) {
             thumbnail.style.backgroundImage = `url(${path})`;
         } else {

@@ -397,7 +397,8 @@ button {
 
 
 .footer {
-    background: #fff
+    background: #fff;
+    margin-top : 100px
 }
 
 .footer>.inner {
