@@ -65,6 +65,10 @@ deleteApplicant.forEach((button) => {
 const checkBox = document.querySelectorAll(".statuscheck");
 const docupassBtn = document.querySelectorAll("div.docu-pass");
 const failBtn = document.querySelectorAll("div.fail");
+const dropdownBtn = document.querySelectorAll("button.dropdown-button")
+const finalpassBtn = document.querySelectorAll(".final-pass")
+
+
 docupassBtn.forEach((btns) => {
     btns.addEventListener("click", () => {
         console.log(btns);
@@ -76,8 +80,37 @@ docupassBtn.forEach((btns) => {
             } else {
             }
         });
+        btns.parentElement.style.display = "none"
     });
 });
+
+finalpassBtn.forEach((btns) => {
+    btns.addEventListener("click", () => {
+        console.log(btns);
+        checkBox.forEach((check) => {
+            console.log(check.checked);
+            if (check.checked) {
+                check.parentElement.parentElement.lastElementChild.innerHTML = `최종합격`;
+                console.log(check);
+            } else {
+            }
+        });
+        btns.parentElement.style.display = "none"
+    });
+});
+const dropdownArea = document.querySelectorAll(".dropdown")
+
+dropdownArea.forEach((hover) =>{
+    hover.addEventListener("mouseover",()=>{
+        hover.lastElementChild.style.display = "block"
+    })
+})
+
+dropdownArea.forEach((hover) =>{
+    hover.addEventListener("mouseout",()=>{
+        hover.lastElementChild.style.display = "none"
+    })
+})
 
 failBtn.forEach((btns) => {
     btns.addEventListener("click", () => {
@@ -90,6 +123,7 @@ failBtn.forEach((btns) => {
             } else {
             }
         });
+        btns.parentElement.style.display = "none"
     });
 });
 const readBtn = document.querySelectorAll("div.readcheck");
@@ -106,6 +140,7 @@ readBtn.forEach((btns) => {
             } else {
             }
         });
+        btns.parentElement.style.display = "none"
     });
 });
 
@@ -120,6 +155,7 @@ unreadBtn.forEach((btns) => {
             } else {
             }
         });
+        btns.parentElement.style.display = "none"
     });
 });
 
@@ -136,14 +172,44 @@ unreadBtn.forEach((btns) => {
 //     }
 // })
 
+const pageNum = document.querySelectorAll("div.pagination button");
+const pageNumArea = document.querySelector("div.pagination");
 
-const pageNumAction = document.querySelectorAll("div.pagination button")
+pageNumArea.addEventListener("click", (e) => {
+    var activeNum = document.querySelector("button.active");
+    console.log(activeNum.innerText);
+    pageNum.forEach((buttons) => {
+        if (e.target.contains(buttons)) {
+            if (buttons.innerText == ">") {
+                activeNum.classList.remove("active");
+                activeNum.nextElementSibling.classList.add("active");
+            } else if (buttons.innerText == "<") {
+                activeNum.previousElementSibling.classList.add("active");
+                console.log(activeNum);
+                // activeNum.classList.remove('active')
+                console.log(activeNum);
+            } else {
+                buttons.classList.add("active");
+            }
+        } else {
+            buttons.classList.remove("active");
+        }
+    });
+});
 
+const openModal = document.querySelectorAll(".sendemail-button");
+const closeModal = document.getElementById("closeModal");
+const closeModal2 = document.getElementById("closeModal2");
+const emailModal = document.getElementById("emailModal");
+openModal.forEach((button) => {
+    button.addEventListener("click", function () {
+        emailModal.style.display = "flex";
+    });
+});
 
-pageNumAction.forEach((number) =>{   
-    number.addEventListener('click',()=>{
-        number.classList.add('active')
-        number.classList.remove('disabled')            
-    })
-})
-
+closeModal.addEventListener("click", function () {
+    emailModal.style.display = "none";
+});
+closeModal2.addEventListener("click", function () {
+    emailModal.style.display = "none";
+});

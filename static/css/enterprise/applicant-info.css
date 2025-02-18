@@ -1,0 +1,179 @@
+body {
+    background-color: #f8f8f8;
+}
+
+input {
+    appearance: auto !important;
+}
+
+.container {
+    display: flex;
+    width : 1200px;
+    margin: auto;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.left-section {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant {
+    background: white;
+    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.asidebars {
+    margin-left: 50px;
+}
+
+.applicant-judge {
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.right-section {
+    min-width: 250px;
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.file-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.file {
+    background: white;
+    padding: 20px;
+    border: 0.5px solid rgb(204, 204, 204);
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.file input[type="checkbox"] {
+    margin-bottom: 10px;
+    width: 25px;
+    transform : scale(1.5)
+}
+
+.file span {
+    text-align: left;
+    font-weight: 500;
+}
+
+.buttons {
+    align-content: center;
+    width : 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    background-color: rgb(244, 244, 244);
+    padding: 5px 0;
+    border-radius: 5px;
+    width: 60px;
+    
+}
+
+.button {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    background: white;
+    color: var(--greentemp);
+    border: 1px solid var(--greentemp);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #45a049;
+}
+.status{
+    margin-bottom: 10px;
+}
+.fail{
+    color : rgb(242,88,101);
+    background-color: rgb(253,236,238);
+    padding : 5px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.status span:nth-child(2){
+    color: rgb(204, 204, 204);
+}
+
+.status span{
+    font-size : 14px;
+ 
+}
+.position{
+    font-weight: 500;   
+}
+
+.applicant-name{
+    font-size : 20px;
+    font-weight: bold;
+    margin : 10px 0 15px;
+}
+
+.phone, .email{
+    display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.phone img, .email img{
+    margin-right : 5px;
+
+}
+
+.evaluation {
+    display: flex;
+    
+}
+.evaluation span{
+    display: flex;
+    align-items: center;
+    background-color: rgb(234, 234, 234);
+    border-radius: 5px;
+    margin-right: 10px;
+    padding : 0 5px;
+}
+.evaluation img{
+    width : 34px
+}
+.footer {
+    margin-top: 100px;
+}
