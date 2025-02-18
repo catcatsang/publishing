@@ -344,19 +344,19 @@ th {
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-.pagination a {
+.pagination button{
     margin: 0 5px;
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;
     color: #666666d7;
 }
-.pagination a.active {
+.pagination button.active {
     font-weight: bold;
     text-decoration: underline;
     
 }
-.pagination a.disabled {
+.pagination button.disabled {
     pointer-events: none;
 }
 

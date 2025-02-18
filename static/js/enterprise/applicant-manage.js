@@ -55,7 +55,6 @@ const deleteApplicant = document.querySelectorAll("span.delete");
 
 deleteApplicant.forEach((button) => {
     button.addEventListener("click", (e) => {
-
         if (confirm("지원자를 삭제하시겠습니까?")) {
             e.target.closest("tr").remove();
         } else {
@@ -136,3 +135,15 @@ unreadBtn.forEach((btns) => {
 
 //     }
 // })
+
+
+const pageNumAction = document.querySelectorAll("div.pagination button")
+
+
+pageNumAction.forEach((number) =>{   
+    number.addEventListener('click',()=>{
+        number.classList.add('active')
+        number.classList.remove('disabled')            
+    })
+})
+
