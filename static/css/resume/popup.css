@@ -5345,7 +5345,7 @@
 
         .print_area {
             position: relative;
-            width: 632px;
+            width: 100%;
             color: rgb(34, 34, 34);
             box-sizing: border-box;
         }
@@ -5467,7 +5467,7 @@
             padding-top: 12px;
             overflow-wrap: break-word;
             word-break: break-all;
-            white-space: pre-wrap;
+            /* white-space: pre-wrap; */
             font-size: 15px;
             line-height: 24px;
         }

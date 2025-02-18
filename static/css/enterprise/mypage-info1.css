@@ -933,3 +933,8 @@ button {
 .wrap_content .wrap_title {
     padding-bottom: 40px;
 }
+
+.welfarearea{
+    display: flex;
+    align-items: center;
+}
