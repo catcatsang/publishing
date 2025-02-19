@@ -15,7 +15,7 @@ function toggleCheckbox(element) {
 
     managerEdit.addEventListener('click',() =>{
         // 인증 알고리즘.
-        // 문자메시지 인증증
+        // 문자메시지 인증
         alert("변경이 완료되었습니다.")
     })
 
@@ -25,6 +25,12 @@ function toggleCheckbox(element) {
         // 비밀번호 변경 창.
         alert("비밀번호가 변경되었습니다!")
     })
+
+    const emailChange = document.getElementById("btnEditEmail")
+    emailChange.addEventListener('click',() =>{
+        alert("이메일이 변경되었습니다!")
+    })
+
 
  function sample6_execDaumPostcode() {
         new daum.Postcode({
