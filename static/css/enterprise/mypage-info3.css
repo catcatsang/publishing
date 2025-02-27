@@ -273,7 +273,7 @@
 }
 
 .companyinfo_modify_wrap .line_block {
-    display: block;
+    display: flex;
     position: relative;
     margin-top: 10px;
     line-height: 21px
